@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :messages
   resource :session
+  # delete '/logout', to: 'sessions#destroy'
   resources :passwords, param: :token
   draw :madmin
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

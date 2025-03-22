@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[ show edit update destroy ]
-  before_action :ensure_user_is_logged_in, only: %i[ index ]
-  allow_unauthenticated_access only: [:index]
+  # allow_unauthenticated_access only: [:index]
 
   # GET /messages or /messages.json
   def index
@@ -62,24 +61,6 @@ class MessagesController < ApplicationController
   end
 
   private
-    def ensure_user_is_logged_in
-      # If the user isn't logged in
-      if Current.user.nil?
-        # Try to find the user with ID = 1
-        user = User.find_by(email_address: 'admin@example.com')
-
-        if user
-          # If the user exists, log them in
-          start_new_session_for user
-        else
-          # If the user doesn't exist, create them
-          user = User.create!(email_address: 'admin@example.com', password: 'password123', password_confirmation: 'password123')
-          Message.create(title: "hello world", content: '<p>this is the body</p>', encrypted_user_id: user.id)
-          start_new_session_for user
-        end
-      end
-    end
-
     def set_message
       @message = Message.find(params.expect(:id))
     end
