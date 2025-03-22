@@ -10,16 +10,29 @@
  */
 
 
-.youtube {
-  .hw-combobox__main__wrapper {
-    @apply sm:w-[35rem] rounded-full w-80;
-  }
-  .hw-combobox__handle {
-    @apply right-3;
-  }
-  .hw-combobox__listbox {
-    @apply rounded-2xl;
-  }
-  /* Magnifying glass icon: */
-  --hw-handle-image: url("data:image/svg+xml;charset=utf-8,/* encoded magnifying glass svg */");
+#template_section {
+  transition: opacity 0.3s ease-in-out;
+}
+
+textarea {
+  transition: height 0.2s ease; /* Smooth transition for height */
+}
+
+.message-textarea {
+  min-height: 100px;   /* Minimum height for the textarea */
+  resize: none;        /* Disable manual resizing */
+  overflow-y: hidden;  /* Hide vertical scrollbar */
+  padding: 10px;       /* Space inside the textarea */
+  font-size: 1rem;     /* Customize font size */
+  line-height: 1.5;    /* Improve readability with line height */
+  border: 1px solid #ccc;  /* Light border for the textarea */
+  border-radius: 5px;  /* Rounded corners */
+  width: 100%;         /* Full width */
+  box-sizing: border-box; /* Ensure padding and borders are included in width/height */
+  transition: height 0.2s ease; /* Smooth transition when resizing */
+}
+
+.message-textarea:focus {
+  border-color: #4A90E2;  /* Highlight border color when focused */
+  outline: none;           /* Remove default focus outline */
 }

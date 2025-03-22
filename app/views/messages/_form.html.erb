@@ -17,11 +17,11 @@
   <%= select_tag :template_id, 
         options_from_collection_for_select(MessageTemplate.all, :id, :title), 
         prompt: "Select a template", 
-        data: { action: "change->message#loadTemplate" } %>
+        data: { action: "change->message#loadTemplate", target: "message.templateSelect" } %>
 
   <!-- Hidden Preview Section (Initially Hidden) -->
   <div id="template_section" style="display: none;">
-    <turbo-frame id="template_content"></turbo-frame>
+    <turbo-frame id="template_content" data-message-target="templatePreview"></turbo-frame>
     <button type="button" data-action="click->message#useTemplate">Use</button>
   </div>
 
@@ -31,9 +31,10 @@
   </div>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.textarea :content, data: { message_target: "input" } %>
+    <%= form.label :content, style: "display: block"%>
+    <%= form.text_area :content,  rows: "15", cols: "50", data: { message_target: "messageField" } %>
   </div>
+
 
   <div>
     <%= form.label :user, style: "display: block" %>
