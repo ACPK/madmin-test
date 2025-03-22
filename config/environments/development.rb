@@ -3,6 +3,12 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
+  # NOTE: This is only for demo purposes. Use ENVs in non-demos
+  config.active_record.encryption.primary_key = 'fJAa9l8T5DNaTdIiLjtarl5xceDNFqgk'
+  config.active_record.encryption.deterministic_key = 'qV6VfnwTPq9Ae4Cop1jou6nk0yACh37K'
+  config.active_record.encryption.key_derivation_salt = '6vvkE7wvL9Q0DdPgKd8uoDOsVWm42b0K'
+
   # Make code changes take effect immediately without server restart.
   config.enable_reloading = true
 

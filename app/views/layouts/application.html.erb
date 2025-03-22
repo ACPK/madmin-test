@@ -23,6 +23,8 @@
   </head>
 
   <body>
+    <%= Current.user.email_address %> | <%= link_to 'Go to Madmin Dashboard', '/madmin' %>
+    
     <%= yield %>
   </body>
 </html>
