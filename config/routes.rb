@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :companies
+  get "search" => "companies#search"
   resources :messages
   resource :session
   # delete '/logout', to: 'sessions#destroy'

@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: %i[ show edit update destroy ]
-  # allow_unauthenticated_access only: [:index]
+
+  def search
+  end
 
   # GET /messages or /messages.json
   def index

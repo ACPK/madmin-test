@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Companies" %>
+
+<h1>Companies</h1>
+
+<%= form_with url: search_url do |form| %>
+  <%= form.combobox :search, companies_path, name_when_new: "user[favorite_movie_attributes][name]" %>
+<% end %>
+
+
+<div id="companies">
+  <% @companies.each do |company| %>
+    <%= render company %>
+  <% end %>
+</div>
+
+<%= link_to "New company", new_company_path %>

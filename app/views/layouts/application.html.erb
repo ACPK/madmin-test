@@ -25,7 +25,11 @@
   <body>
     <% if Current.user.present? %>
       <%= Current.user.email_address %>  <%= link_to 'Go to Madmin Dashboard', '/madmin' %> 
+      <%= link_to 'Companies', companies_path %> 
       <%= link_to 'Log out', session_path, method: :delete, data: { turbo_method: :delete } %>
+    <% else %>
+      <%= link_to 'Companies', companies_path %> 
+      <%= link_to 'Log in', new_session_path %> 
     <% end %>
     
     <%= yield %>
