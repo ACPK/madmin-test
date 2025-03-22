@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :companies
   get "search" => "companies#search"
   resources :messages
+  resources :message_templates, only: [:show]
   resource :session
   # delete '/logout', to: 'sessions#destroy'
   resources :passwords, param: :token

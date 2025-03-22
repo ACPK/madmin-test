@@ -55,3 +55,8 @@ json_companies = [
 json_companies.each do |item_data|
   Company.create(name: item_data[:name], status: "published")
 end
+
+MessageTemplate.create([
+  { title: "Reminder", content: "Just a friendly reminder about our meeting." },
+  { title: "Thank You", content: "Thank you for your support!" }
+])
