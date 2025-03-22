@@ -1,6 +1,6 @@
 # Demo Rails App
 
-This is a simple demo Rails app that integrates Rails 8 Authentication and Madmin for a streamlined and easy-to-use admin interface. This guide will help you get started with the app and walk you through the key features.
+This is a simple demo Rails app that integrates Rails 8 Authentication and [Madmin](https://github.com/excid3/madmin) for a streamlined and easy-to-use admin interface. This guide will help you get started with the app and walk you through the key features.
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ bin/dev
 No local database setup is required, as Rails 8 handles data storage seamlessly.
 
 ### Rails Encryption
-he app uses Rails encryption to securely store sensitive data. For demo purposes, the encryption keys are hardcoded to allow users to quickly clone and run the app.
+he app uses [Rails encryption](https://guides.rubyonrails.org/active_record_encryption.html#action-text) to securely store sensitive data. For demo purposes, the encryption keys are hardcoded to allow users to quickly clone and run the app.
 
 In all other cases, they should be managed via environment variables.
 
