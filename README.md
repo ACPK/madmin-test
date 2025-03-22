@@ -36,7 +36,7 @@ bin/dev
 No local database setup is required, as Rails 8 handles data storage seamlessly.
 
 ### Rails Encryption
-he app uses [Rails encryption](https://guides.rubyonrails.org/active_record_encryption.html#action-text) to securely store sensitive data. For demo purposes, the encryption keys are hardcoded to allow users to quickly clone and run the app.
+The app uses [Rails encryption](https://guides.rubyonrails.org/active_record_encryption.html#action-text) to securely store sensitive data. For demo purposes, the encryption keys are hardcoded to allow users to quickly clone and run the app.
 
 In all other cases, they should be managed via environment variables.
 
